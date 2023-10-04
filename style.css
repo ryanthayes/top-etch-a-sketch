@@ -43,6 +43,10 @@ video {
 }
 
 .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: calc(100% / 16);
     height: calc( 100% / 16);
+    aspect-ratio: 1;
 }
