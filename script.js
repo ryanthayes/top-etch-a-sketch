@@ -1,27 +1,35 @@
-const container = document.querySelector('.container');
-const flexGrid = document.querySelector('.flex-grid');
-const gridSize = document.querySelector('.grid-size');
+// Global variables
 
-// Create a 16x16 grid
-function makeGrid(rows, cols) {
-    let cell = flexGrid.querySelectorAll('div');
-    cell.forEach((div) => div.remove());
-    for(i = 0; i < (rows * cols); i++) {
-        cell = document.createElement('div');
-        cell.innerText = (i + 1);
-        flexGrid.appendChild(cell).className = "grid-item";
-        // Paint cells on mouseover
-        cell.addEventListener('mouseover', () => {
-            cell.style.background = 'pink';
-        })
+const sizeOfGrid = 4;
+
+const eraserButton = document.getElementById('btn.erase');
+const resetButton = document.getElementById('btn.reset');
+
+const canvas = document.getElementById('canvas');
+const setCanvasSize = document.getElementById('set-canvas-size');
+
+// Create a square grid
+function createGrid(numOfGrids) {
+    for (let i = 0; i < numOfGrids; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+
+        for (let j = 0; j < numOfGrids; j++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.style.width = '100%';
+            let height = 500 / parseInt(sizeOfGrid);
+            cell.style.height = `${height}px`;
+            cell.innerText = (j + 1);
+            row.appendChild(cell);
+
+            // Change background color of cell when drawing
+            cell.addEventListener('mouseenter', () => {
+            cell.style.backgroundColor = 'black';
+            });
+        }
+        canvas.appendChild(row);
     }
 }
 
-makeGrid(16, 16);
-
-function changeCanvasSize(input) {
-    let rows = input;
-    let cols = input;
-    makeGrid(rows, cols);
-}
-
+createGrid(sizeOfGrid);

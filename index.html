@@ -16,26 +16,37 @@
 
 <body>
     
-    <header>
-        <h1 class="title">Etch-a-Sketch</h1>
-    </header>
-
-    <section class="container">
+    <div class="container">
         
-        <div class="flex-grid">
+        <header id="header">
+            <h1 class="title">Etch-a-Sketch</h1>
+        </header>
+    
+        <section id="main" class="main flex">
+            
+            <div class="user-controls flex flex-columns">
+                <div class="buttons flex flex-columns">
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                    <button id="btn-erase" class="btn">Eraser</button>
+                    <button id="btn-reset" class="btn">Reset</button>
+                </div>
+              
+                <!-- <div class="canvas-size flex flex-columns">
+                    <input id="set-canvas-size" type="text" placeholder="Size of Canvas">
+                    <button class="btn">Set Canvas Size</button>
+                </div> -->
+            </div>
+            
+            <div id="canvas" class="canvas flex align-items-center text-align-center">
+    
+            </div>
+    
+        </section>
+        <footer id="footer">
 
-        </div>
-        <div class="buttons">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <input type="text" placeholder="Size of Canvas" value="16" onchange="changeCanvasSize(this.value)">
-            <button>Set Canvas Size</button>
-        </div>
-
-    </section>
+        </footer>
+    </div>
 
 </body>
 

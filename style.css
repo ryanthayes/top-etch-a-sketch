@@ -2,31 +2,35 @@
 
 :root {
     /* colors */
-    --clr-dark: black;
-    --clr-light: white;
-    --clr-white: white;
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsl(0, 0%, 50%);
+    --clr-neutral-500: hsl(0, 0%, 30%);
+    --clr-neutral-600: hsl(0, 0%, 20%);
+    --clr-neutral-900: hsl(0, 0%, 0%);
+    
+    --clr-primary-400:hsl(0, 100%, 39%);
     
     /* font-sizes */
-    --fs-900: 4rem;
-    --fs-800: 3rem;
-    --fs-700: 2rem;
-    --fs-600: 1.5rem;
-    --fs-500: 1.25rem;
-    --fs-400: 1rem;
-    --fs-300: .875rem;
     --fs-200: .75rem;
+    --fs-300: .875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 2rem;
+    --fs-800: 3rem;
+    --fs-900: 4rem;
 
     /* font weights */
-    --fw-700: 700;
     --fw-400: 400;
+    --fw-700: 700;
     
     /* font-families */
     --ff-primary: 'Inter', sans-serif;
 
     /* Spacing */
-    --spacer-lg: 2rem;
-    --spacer-md: 1rem;
     --spacer-sm: .5rem;
+    --spacer-md: 1rem;
+    --spacer-lg: 2rem;
 ;
 }
 /* === BASE RESET === */
@@ -58,6 +62,7 @@ html {
 
 body {
   min-height: 100vh;
+  line-height: 1.5;
 }
 
 /* responsive images/videos */
@@ -69,11 +74,12 @@ video {
   max-width: 100%;
 }
 
+/* === GENERAL STYLES === */
+
 body {
-    font-family: var(--ff-primary);
-    font-size: var(--fs-400);
-    font-weight: var(--fw-400);
-    line-height: 1.5;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
 }
 
 h1,
@@ -106,17 +112,60 @@ input {
     max-width: 75rem;
 }
 
-.flex-grid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+.main {
+  gap: var(--spacer-lg);
 }
 
-.grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(100% / 16);
-    height: calc( 100% / 16);
-    aspect-ratio: 1;
+.user-controls,
+.buttons {
+  gap: var(--spacer-md);
+}
+
+
+.canvas {
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    background-color: var(--clr-neutral-400);
+}
+.row,
+.cell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* === BUTTONS === */
+
+.btn {
+  max-width: 100%;
+  width: 150px;
+  padding: .5em 1.5em;
+  background-color: var(--clr-neutral-600);
+  border: none;
+  border-radius: .5em;
+}
+
+.btn-reset {
+
+}
+
+/* === UTILITY CLASSES === */
+
+.flex {
+  display: flex;
+}
+.flex-columns {
+  flex-direction: column;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content {
+  justify-content: center;
+}
+.text-align-center {
+  text-align: center;
 }
