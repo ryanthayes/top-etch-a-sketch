@@ -31,6 +31,11 @@
     --spacer-sm: .5rem;
     --spacer-md: 1rem;
     --spacer-lg: 2rem;
+
+    /* Border Radius */
+    --br-sm: .5rem;
+    --br-md: 2rem;
+    --br-lg: 10rem;
 ;
 }
 /* === BASE RESET === */
@@ -80,6 +85,7 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-400);
   font-weight: var(--fw-400);
+
 }
 
 h1,
@@ -107,7 +113,6 @@ input {
 }
 
 .container {
-    margin: 0 auto;
     padding: 4rem;
     max-width: 75rem;
 }
@@ -115,19 +120,23 @@ input {
 .main {
   gap: var(--spacer-lg);
 }
-
+.canvas-size {
+  margin-bottom: var(--spacer-md);
+}
 .user-controls,
 .buttons {
   gap: var(--spacer-md);
 }
 
-
+.input-slider {
+  gap: var(--spacer-md);
+}
 .canvas {
-    flex-wrap: wrap;
     width: 500px;
     height: 500px;
-    background-color: var(--clr-neutral-400);
+    /* background-color: var(--clr-neutral-400); */
 }
+
 .row,
 .cell {
   display: flex;
@@ -140,12 +149,15 @@ input {
 /* === BUTTONS === */
 
 .btn {
+  cursor: pointer;
+  font-size: var(--fs-300);
   max-width: 100%;
   width: 150px;
-  padding: .5em 1.5em;
+  padding: .5em;
+  line-height: 1;
   background-color: var(--clr-neutral-600);
   border: none;
-  border-radius: .5em;
+  border-radius: var(--br-lg);
 }
 
 .btn-reset {

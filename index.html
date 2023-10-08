@@ -16,7 +16,7 @@
 
 <body>
     
-    <div class="container">
+    <div class="container flex flex-columns align-items-center">
         
         <header id="header">
             <h1 class="title">Etch-a-Sketch</h1>
@@ -25,20 +25,25 @@
         <section id="main" class="main flex">
             
             <div class="user-controls flex flex-columns">
+                
+                 <div class="canvas-size flex flex-columns">
+                    <div class="input-slider flex align-items-center">
+                        <input id="canvas-size-input" type="range" min="4" max="100" value="16">
+                        <label id="canvas-size-label" for="canvas-size"></label>
+                    </div>
+                    <button id="canvas-size-button" class="btn canvas-size-button">Set Canvas Size</button>
+                </div>
+                
                 <div class="buttons flex flex-columns">
-                    <button class="btn"></button>
-                    <button class="btn"></button>
-                    <button id="btn-erase" class="btn">Eraser</button>
-                    <button id="btn-reset" class="btn">Reset</button>
+                    <button class="btn btn-black" onClick="changeColor(BLACK)">Black</button>
+                    <button id="btn-random" class="btn btn-random" onClick="changeColor('RANDOM')">Random</button>
+                    <button id="btn-eraser" class="btn btn-eraser" onClick="changeColor(GRAY)">Eraser</button>
+                    <button id="btn-clear" class="btn">Clear</button>
                 </div>
               
-                <!-- <div class="canvas-size flex flex-columns">
-                    <input id="set-canvas-size" type="text" placeholder="Size of Canvas">
-                    <button class="btn">Set Canvas Size</button>
-                </div> -->
             </div>
             
-            <div id="canvas" class="canvas flex align-items-center text-align-center">
+            <div id="canvas" class="canvas flex">
     
             </div>
     
