@@ -6,14 +6,15 @@ let color = BLACK;
 let sizeOfGrid = 16;
 let click = false;
 
-const slider = document.getElementById('canvas-size-input');
+const slider = document.getElementById('pixel-size-input');
 const eraserButton = document.getElementById('btn-eraser');
 const clearButton = document.getElementById('btn-clear');
-const gridSizeButton = document.getElementById('canvas-size-button');
+const pixelSizeButton = document.getElementById('pixel-size-button');
 const canvas = document.getElementById('canvas');
 
 // Create a square grid
 function createGrid(numOfGrids) {
+    clear();
     for (let i = 0; i < numOfGrids; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
@@ -39,8 +40,20 @@ createGrid(sizeOfGrid);
 
 // UI controls
 
-// Range Bar and Display:
+// Set pixel size for new canvas slider
+let pixelSizeSlider = document.getElementById('pixel-size-slider');
+pixelSizeSlider.value = 16;
+let displayPixelSize = document.getElementById('pixel-size-label');
+displayPixelSize.textContent = pixelSizeSlider.value;
+pixelSizeSlider.oninput = function() {
+    displayPixelSize.textContent = this.value;
+}
 
+// Button to capture slider value to create new grid
+pixelSizeButton.addEventListener('click', function() {
+sizeOfGrid = pixelSizeSlider.value;
+createGrid(sizeOfGrid);
+})
 
 // Change color of paint
 function colorCell() {
@@ -57,14 +70,20 @@ function changeColor(colorChoice) {
     color = colorChoice;
 }
 
-// Clear grid
+// Clear Grid
 function clear() {
+    let pixels = canvas.querySelectorAll('div');
+    pixels.forEach((div) => div.remove());
+}
+
+// Reset grid
+function reset() {
     let cells = canvas.querySelectorAll('div');
     cells.forEach((div) => div.style.backgroundColor = GRAY);
 }
 
 // Event listeners
-clearButton.addEventListener('click', clear);
+clearButton.addEventListener('click', reset);
 document.querySelector("body").addEventListener('click', () => {
     click = !click;
 })
