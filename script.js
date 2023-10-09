@@ -55,6 +55,13 @@ pixelSizeSlider.addEventListener('mouseup', function() {
     createGrid(sizeOfGrid);
     })
 
+// Color Picker
+const colorPicker = document.getElementById('color-picker-input');
+colorPicker.value = "#57b7f9"
+colorPicker.addEventListener('change', function() {         
+    color = colorPicker.value;
+})
+
 // Change color of paint
 function colorCell() {
     if (click) {
@@ -97,14 +104,6 @@ for (var i =0; i < btns.length; i++) {
 // Event listeners
 
 clearButton.addEventListener('click', reset);
-document.querySelector("body").addEventListener('click', () => {
+document.querySelector(".canvas").addEventListener('click', () => {
     click = !click;
-})
-
-// Color Picker
-const colorPicker = document.getElementById('color-picker-input');
-colorPicker.value = "#000000"
-colorPicker.addEventListener('change', function() {         
-    color = colorPicker.value;
-    console.log(colorPicker.value);
 })

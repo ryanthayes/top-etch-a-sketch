@@ -122,6 +122,10 @@ body {
   box-shadow: var(--shadow);
 }
 
+.draw-hint {
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-400);
+}
 .color-picker,
 .pixel-size {
   gap: var(--spacer-md);
