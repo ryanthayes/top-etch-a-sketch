@@ -7,6 +7,7 @@ let color = BLACK;
 let sizeOfGrid = 16;
 let click = false;
 
+
 const btns = document.querySelectorAll('.btn');
 const slider = document.getElementById('pixel-size-input');
 const eraserButton = document.getElementById('btn-eraser');
@@ -57,7 +58,7 @@ pixelSizeSlider.addEventListener('mouseup', function() {
 
 // Color Picker
 const colorPicker = document.getElementById('color-picker-input');
-colorPicker.value = "#57b7f9"
+colorPicker.value = "#333333"
 colorPicker.addEventListener('change', function() {         
     color = colorPicker.value;
 })
