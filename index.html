@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     
@@ -19,26 +21,32 @@
     <div class="container flex flex-columns align-items-center">
         
         <header id="header">
-            <h1 class="title">Etch-a-Sketch</h1>
+            <h1 class="title text-align-center">Etch-A-Sketch</h1>
         </header>
     
         <section id="main" class="main flex">
             
-            <div class="user-controls flex flex-columns">
+            <div class="user-controls flex flex-columns align-items-center">
                 
-                 <div class="pixel-size flex flex-columns">
-                    <div class="input-slider flex align-items-center">
-                        <input id="pixel-size-slider" type="range" min="4" max="100" value="16">
-                        <label id="pixel-size-label" for="pixel-size-slider"></label>
+                
+                <div class="pixel-size flex flex-columns">
+                    <h2 class="pixel-size-title text-align-center">Grid Size</h2>
+                    <div class="pixel-size-container flex align-items-center">
+                        <input id="pixel-size-slider" class="pixel-size-slider" type="range" min="4" max="100" value="16">
+                        <label id="pixel-size-label" class="pixel-size-label" for="pixel-size-slider"></label>
                     </div>
-                    <button id="pixel-size-button" class="btn pixel-size-button">Pixel Size</button>
                 </div>
+                
+                <div id="color-picker" class="color-picker flex flex-columns align-items-center">
+                    <label class="color-picker-title" for="color-picker-input">Pick A Color</label>
+                    <input class="color-picker-input" type="color" id="color-picker-input" value="#000000">
+                </div> 
                 
                 <div class="buttons flex flex-columns">
                     <button class="btn btn-black" onClick="changeColor(BLACK)">Black</button>
                     <button id="btn-random" class="btn btn-random" onClick="changeColor('RANDOM')">Random</button>
-                    <button id="btn-eraser" class="btn btn-eraser" onClick="changeColor(GRAY)">Eraser</button>
-                    <button id="btn-clear" class="btn">Clear</button>
+                    <button id="btn-eraser" class="btn btn-eraser" onClick="changeColor(WHITE)">Eraser</button>
+                    <button id="btn-clear" class="btn btn-clear">Clear</button>
                 </div>
               
             </div>

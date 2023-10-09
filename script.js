@@ -1,4 +1,5 @@
 // Global variables 
+const WHITE = 'var(--clr-neutral-100)';
 const BLACK = 'var(--clr-neutral-900)';
 const GRAY = 'var(--clr-neutral-400)';
 
@@ -6,10 +7,10 @@ let color = BLACK;
 let sizeOfGrid = 16;
 let click = false;
 
+const btns = document.querySelectorAll('.btn');
 const slider = document.getElementById('pixel-size-input');
 const eraserButton = document.getElementById('btn-eraser');
 const clearButton = document.getElementById('btn-clear');
-const pixelSizeButton = document.getElementById('pixel-size-button');
 const canvas = document.getElementById('canvas');
 
 // Create a square grid
@@ -25,7 +26,7 @@ function createGrid(numOfGrids) {
             cell.classList.add('cell');
             cell.style.width = `${widthAndHeight}px`;
             cell.style.height = `${widthAndHeight}px`;
-            cell.style.backgroundColor = GRAY;
+            cell.style.backgroundColor = WHITE;
             row.appendChild(cell);
 
             // Change background color of cell when drawing
@@ -49,11 +50,10 @@ pixelSizeSlider.oninput = function() {
     displayPixelSize.textContent = this.value;
 }
 
-// Button to capture slider value to create new grid
-pixelSizeButton.addEventListener('click', function() {
-sizeOfGrid = pixelSizeSlider.value;
-createGrid(sizeOfGrid);
-})
+pixelSizeSlider.addEventListener('mouseup', function() {
+    sizeOfGrid = pixelSizeSlider.value;
+    createGrid(sizeOfGrid);
+    })
 
 // Change color of paint
 function colorCell() {
@@ -70,20 +70,41 @@ function changeColor(colorChoice) {
     color = colorChoice;
 }
 
-// Clear Grid
+// Clear grid (before new grid size)
 function clear() {
     let pixels = canvas.querySelectorAll('div');
     pixels.forEach((div) => div.remove());
 }
 
-// Reset grid
+// Reset grid (keeping same grid size)
 function reset() {
     let cells = canvas.querySelectorAll('div');
-    cells.forEach((div) => div.style.backgroundColor = GRAY);
+    cells.forEach((div) => div.style.backgroundColor = WHITE);
 }
 
+// Loop through ALL buttons and add the ACTIVE class to the current/clicked button
+for (var i =0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function() {
+        let current = document.getElementsByClassName('active');
+        if (current.length > 0) {
+            current[0].className = current[0].className.replace(' active', "");
+        }
+        // Add the active class to the current/clicked button
+        this.className += ' active';
+    })
+} 
+
 // Event listeners
+
 clearButton.addEventListener('click', reset);
 document.querySelector("body").addEventListener('click', () => {
     click = !click;
+})
+
+// Color Picker
+const colorPicker = document.getElementById('color-picker-input');
+colorPicker.value = "#000000"
+colorPicker.addEventListener('change', function() {         
+    color = colorPicker.value;
+    console.log(colorPicker.value);
 })
