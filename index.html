@@ -10,21 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
+
+    <title>Etch-a-Sketch</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    
-    <title>Etch-a-Sketch</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
 </head>
 
 <body>
     
-    <div class="container flex flex-columns align-items-center">
+    <div class="wrapper flex flex-columns align-items-center justify-content-center">
         
         <header id="header" class="">
             <h1 class="title text-align-right">Etch-A-Sketch</h1>
-            <h2 class="sub-title draw-hint text-align-right">Click on Grid to Draw</h2>
+            <h2 class="sub-title draw-hint text-align-right">Click on Canvas to Draw</h2>
         </header>
     
         <section id="main" class="main flex">
@@ -41,14 +42,14 @@
                 
                 <div id="color-picker" class="color-picker flex flex-columns align-items-center">
                     <label class="color-picker-title" for="color-picker-input">Pick A Color</label>
-                    <input class="color-picker-input" type="color" id="color-picker-input" value="#000000">
+                    <input id="color-picker-input" class="color-picker-input" type="color">
                 </div> 
                 
                 <div class="buttons flex flex-columns">
-                    <button class="btn btn-black" onClick="changeColor(BLACK)">Black</button>
-                    <button id="btn-random" class="btn btn-random" onClick="changeColor('RANDOM')">Random</button>
-                    <button id="btn-eraser" class="btn btn-eraser" onClick="changeColor(WHITE)">Eraser</button>
-                    <button id="btn-clear" class="btn btn-clear">Clear</button>
+                    <button class="btn btn-black" data-btn-black>Black</button>
+                    <button class="btn btn-random" data-btn-random>Random</button>
+                    <button class="btn btn-eraser"  data-btn-eraser>Eraser</button>
+                    <button class="btn btn-clear" data-btn-clear>Clear</button>
                 </div>
               
             </div>
@@ -59,7 +60,11 @@
     
         </section>
         <footer id="footer">
-
+            <footer id="footer" class="flex align-items-center">
+                <p>© <span id="year"></span> Ryan Hayes</p><a target="_blank" href="https://github.com/ryanthayes/top-etch-a-sketch"><img class="github" src="images/github-gray.svg" height="25px"></a>
+                <script>
+                    document.getElementById("year").innerHTML = new Date().getFullYear();
+                </script>
         </footer>
     </div>
 

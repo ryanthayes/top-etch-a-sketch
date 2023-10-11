@@ -2,6 +2,7 @@
 const WHITE = 'var(--clr-neutral-100)';
 const BLACK = 'var(--clr-neutral-900)';
 const GRAY = 'var(--clr-neutral-400)';
+const RANDOM = '';
 
 let color = BLACK;
 let sizeOfGrid = 16;
@@ -10,8 +11,10 @@ let click = false;
 
 const btns = document.querySelectorAll('.btn');
 const slider = document.getElementById('pixel-size-input');
-const eraserButton = document.getElementById('btn-eraser');
-const clearButton = document.getElementById('btn-clear');
+const blackBtn = document.querySelector('[data-btn-black]');
+const randomBtn = document.querySelector('[data-btn-random]');
+const eraserBtn = document.querySelector('[data-btn-eraser]');
+const clearBtn = document.querySelector('[data-btn-clear]');
 const canvas = document.getElementById('canvas');
 
 // Create a square grid
@@ -58,15 +61,16 @@ pixelSizeSlider.addEventListener('mouseup', function() {
 
 // Color Picker
 const colorPicker = document.getElementById('color-picker-input');
-colorPicker.value = "#333333"
+colorPicker.value = BLACK;
 colorPicker.addEventListener('change', function() {         
     color = colorPicker.value;
 })
 
 // Change color of paint
 function colorCell() {
-    if (click) {
-        if((color === 'RANDOM')) {
+    if (click) 
+    {
+        if((color === RANDOM)) {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
         } else {
             this.style.backgroundColor = color;
@@ -74,14 +78,23 @@ function colorCell() {
     }
 }
 
-function changeColor(colorChoice) {
-    color = colorChoice;
-}
+// Loop through ALL buttons and add the ACTIVE class to the current/clicked button
+// for (var i =0; i < btns.length; i++) {
+//     btns[i].addEventListener('click', function() {
+//         let current = document.getElementsByClassName('active');
+//         if (current.length > 0) {
+//             current[0].className = current[0].className.replace(' active', "");
+//         }
+//         // Add the active class to the current/clicked button
+//         this.className += ' active';
+//     })
+// } 
 
 // Clear grid (before new grid size)
 function clear() {
     let pixels = canvas.querySelectorAll('div');
     pixels.forEach((div) => div.remove());
+    // clearBtn.classList.remove('hasactive');
 }
 
 // Reset grid (keeping same grid size)
@@ -90,21 +103,17 @@ function reset() {
     cells.forEach((div) => div.style.backgroundColor = WHITE);
 }
 
-// Loop through ALL buttons and add the ACTIVE class to the current/clicked button
-for (var i =0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function() {
-        let current = document.getElementsByClassName('active');
-        if (current.length > 0) {
-            current[0].className = current[0].className.replace(' active', "");
-        }
-        // Add the active class to the current/clicked button
-        this.className += ' active';
-    })
-} 
-
 // Event listeners
-
-clearButton.addEventListener('click', reset);
-document.querySelector(".canvas").addEventListener('click', () => {
+blackBtn.addEventListener('click', () => {
+    color = BLACK;
+});
+randomBtn.addEventListener('click', () => {
+    color = RANDOM;
+});
+eraserBtn.addEventListener('click', () => {
+    color = WHITE;
+});
+clearBtn.addEventListener('click', reset);
+document.querySelector('.canvas').addEventListener('click', () => {
     click = !click;
 })
