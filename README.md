@@ -33,18 +33,20 @@ The goal of the project was to o build a browser version of something between a 
 
 ### Features
 
--   
-- It can evaluate expressions for Multiplication, Division, Subtraction & Addition 
-
+- Update pixel size of canvas via slider 
+- Use color picker to choose custom drawing color
+- Random draws with rainbow colors
+- Click to activate/deactivate "pen" for drawing
 
 ### Outcome
 
-* Used HTML5 **semantic elements** for better readability and structure
-* Used CSS3 **flex** to manage layout
-* Used **Data-Attributes** for accessing DOM Elements
-* Used **Git** and **GitHub** for project management
-* Tried to maintain **clean code**
-* **Cross tested** on Firefox and Chromium based browsers
+- Used HTML5 **semantic elements** for better readability and structure
+- Used CSS3 **flex** to manage layout
+- Used **CSS Variables** for easier style maintenance
+- Used **Data-Attributes** for accessing DOM Elements
+- Used **Git** and **GitHub** for project management
+- Tried to maintain **clean code**
+- **Cross tested** on Firefox and Chromium based browsers
 
 ### What I learned
 
