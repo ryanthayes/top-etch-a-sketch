@@ -1,35 +1,15 @@
-# The Odin Project - Etch A Sketch
+# Etch A Sketch
 
-## Table of contents
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#what-i-learned">What I learned</a> •
+  <a href="#useful-resources">Useful Resources</a> •
+  <a href="#contact">Contact</a>
+</p>
 
-- [Overview](#overview)
-  - [The goal](#the-goal)
-  - [Preview](#preview)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Features](#features)
-  - [Outcome](#outcome)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Proud of](#proud-of)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+## Overview 
 
-### The goal 
-
-The goal of the project was to o build a browser version of something between a sketchpad and an Etch-A-Sketch. 
-
-### Preview
-
-![](./images/preview.png)
-
-## My process
-
-### Built With
-
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)   
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)   
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+The goal of the project was to o build a browser version of something between a sketchpad and an Etch-A-Sketch. The project required a deep dive into DOM manipulation and customizing aspects of the etc-a-sketch app based on user input for things such as pixel size of the canvas, choosing custom colors to draw with, and resetting (shaking) the canvas.
 
 ### Features
 
@@ -48,22 +28,33 @@ The goal of the project was to o build a browser version of something between a 
 - Tried to maintain **clean code**
 - **Cross tested** on Firefox and Chromium based browsers
 
-### What I learned
+### Desktop Preview
+
+![](./images/preview.png)
+
+### Live Version
+**[Etch A Sketch](https://ryanthayes.github.io/etch-a-sketch/)**
+
+### Built With
+
+ ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)   ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+## What I learned
 
 - Create x number of elements using for Loop.
 - Create and style a **HTML Range Slider**.
 - Create a **HTML Color Picker**.
 - Include CSS variables in JavaScript.
 
-### Proud of
+## Proud of
 
-### Useful resources
+## Useful resources
 
 - [Javascript Get HTML Slider Value](https://www.thepoorcoder.com/javascript-get-html-slider-value/)
 - [How TO - Range Sliders](https://www.w3schools.com/howto/howto_js_rangeslider.asp)
 - [Remove inside border in type=color](https://stackoverflow.com/questions/65910526/remove-inside-border-in-type-color)
 - [How TO - Color Picker](https://www.w3schools.com/howto/howto_html_colorpicker.asp)
 
-## Author
+## Contact
 
 [![LinkedIN](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ryan-t-hayes/)
