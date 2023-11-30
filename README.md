@@ -9,7 +9,7 @@
 
 ## Overview 
 
-The goal of the project was to o build a browser version of something between a sketchpad and an Etch-A-Sketch. The project required a deep dive into DOM manipulation and customizing aspects of the etc-a-sketch app based on user input for things such as pixel size of the canvas, choosing custom colors to draw with, and resetting (shaking) the canvas.
+The goal of the project was to build a browser version of something between a sketchpad and an Etch-A-Sketch. The project required a deep dive into DOM manipulation and customizing aspects of the etch-a-sketch app based on user input for things such as pixel size of the canvas, choosing custom colors to draw with, and resetting (shaking) the canvas.
 
 ### Features
 
